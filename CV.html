@@ -5,19 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil de Yassin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Dégradé de fond de la page */
+        body {
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Style de la Navbar */
+        .navbar {
+            background-color: #3a4f63;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ffd700 !important;
+        }
+
+        /* Animation d'ouverture pour le menu */
+        .navbar-collapse.collapse {
+            transition: transform 0.4s ease;
+            transform-origin: top;
+            transform: scaleY(0);
+        }
+        .navbar-collapse.show {
+            transform: scaleY(1);
+        }
+
+        /* Style des cartes et animation uniforme */
+        .card {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            background: #ffffff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Style des titres */
+        h2, h3 {
+            color: #354152;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Navbar burger menu -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Profil de Yassin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#profil">Profil personnel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#coordonnees">Coordonnées</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiences">Expériences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interets">Centre d’intérêt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#permis">Permis</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu des sections avec animations uniformes -->
     <div class="container mt-5">
-        <!-- Profil personnel -->
-        <div class="card mb-4">
+        <div class="card mb-4" id="profil">
             <div class="card-body">
                 <h2 class="card-title">Profil personnel</h2>
                 <p>Je m'appelle Yassin, je suis actuellement en BTS CIEL à l'IRUP.</p>
             </div>
         </div>
 
-        <!-- Compétences -->
-        <div class="card mb-4">
+        <div class="card mb-4" id="competences">
             <div class="card-body">
                 <h3 class="card-title">Compétences</h3>
                 <ul>
@@ -29,8 +102,7 @@
             </div>
         </div>
 
-        <!-- Coordonnées -->
-        <div class="card mb-4">
+        <div class="card mb-4" id="coordonnees">
             <div class="card-body">
                 <h3 class="card-title">Coordonnées</h3>
                 <p><strong>Email :</strong> yassinxxxxxxx@gmail.com</p>
@@ -38,8 +110,7 @@
             </div>
         </div>
 
-        <!-- Expériences professionnelles -->
-        <div class="card mb-4">
+        <div class="card mb-4" id="experiences">
             <div class="card-body">
                 <h3 class="card-title">Expériences professionnelles</h3>
                 <ul>
@@ -57,8 +128,7 @@
             </div>
         </div>
 
-        <!-- Centre d’intérêt -->
-        <div class="card mb-4">
+        <div class="card mb-4" id="interets">
             <div class="card-body">
                 <h3 class="card-title">Centre d’intérêt</h3>
                 <ul>
@@ -68,8 +138,7 @@
             </div>
         </div>
 
-        <!-- Permis -->
-        <div class="card mb-4">
+        <div class="card mb-4" id="permis">
             <div class="card-body">
                 <h3 class="card-title">Permis</h3>
                 <p>Permis B</p>
@@ -78,7 +147,24 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation d'apparition uniforme pour les sections
+        const cards = document.querySelectorAll('.card');
+        window.addEventListener('scroll', () => {
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                if (cardPosition < window.innerHeight - 100) {
+                    card.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+
+
+
 
 
