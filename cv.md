@@ -8,7 +8,6 @@ Je m'appelle Yassin, je suis actuellement en BTS CIEL à l'IRUP.
 - Langues parlées : Français, Anglais, Espagnol (niveau scolaire)
 
 ## Coordonnées
-- **Adresse :** 17 rue Soleysel, 42000 Saint-Étienne  
 - **Email :** yassinxxxxxxx@gmail.com  
 - **Téléphone :** 06.00.00.00.00
 
